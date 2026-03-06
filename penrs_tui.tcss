@@ -1,0 +1,354 @@
+/* Base Theme */
+Screen { background: #101418; color: #f4e7c5; }
+DirectoryTree, VerticalScroll, RichLog { border: double #00FFFF; padding: 1; }
+DirectoryTree:focus, VerticalScroll:focus, RichLog:focus { border: double #39FF14; }
+.flagged { border: double #FF003C; }
+RichLog { color: #39FF14; }
+
+Screen {
+  background: #101418;
+  color: #f4e7c5;
+}
+
+DirectoryTree, VerticalScroll, RichLog {
+  border: double #00FFFF;
+  padding: 1;
+}
+
+DirectoryTree:focus, VerticalScroll:focus, RichLog:focus {
+  border: double #39FF14;
+}
+
+.flagged {
+  border: double #FF003C;
+}
+
+RichLog {
+  color: #39FF14;
+}
+
+/* Auth Screen */
+#auth_title {
+  width: 100%;
+  content-align: center middle;
+  text-style: bold;
+  color: #00FFFF;
+  text-opacity: 90%;
+  margin-top: 2;
+  padding: 1;
+}
+
+#auth_subtitle {
+  width: 100%;
+  content-align: center middle;
+  color: #7bc8a4;
+  margin-bottom: 2;
+}
+
+#dna_spinner {
+  width: 52;
+  height: 6;
+  margin: 1 4;
+  border: round #00FFFF;
+  color: #00FFFF;
+  content-align: center middle;
+  background: #0a0e12;
+}
+
+/* Inputs and Buttons */
+Input {
+  border: round #7bc8a4;
+  margin: 0 4 1 4;
+  background: #0a0e12;
+  color: #f4e7c5;
+}
+
+Input:focus {
+  border: round #ffd166;
+  background: #141c22;
+}
+
+Button {
+  margin: 1 2;
+  background: #7bc8a4;
+  color: #101418;
+  text-style: bold;
+}
+
+#enter_button {
+  width: 24;
+  margin: 1 4;
+  background: #00FFFF;
+  color: #101418;
+  text-style: bold;
+}
+
+/* Greet Screen */
+#ticker_input, #date_from_input, #date_to_input {
+  width: 60;
+  margin: 0 4 1 4;
+}
+
+#scout_button {
+  width: 30;
+  margin: 1 4;
+  background: #39FF14;
+  color: #101418;
+  text-style: bold;
+}
+
+/* Spec Dialogue */
+#spec_dialogue {
+  border: round #ffd166;
+  background: #1a2228;
+  color: #f4e7c5;
+  padding: 1 2;
+  margin: 1 2;
+  min-height: 3;
+  text-style: italic;
+}
+
+/* Audit Screen Layout */
+Horizontal {
+  height: 1fr;
+}
+
+#ledger {
+  width: 30%;
+  max-width: 40;
+  background: #0a0e12;
+}
+
+Vertical {
+  width: 1fr;
+}
+
+#synthesis {
+  height: 40%;
+  background: #0d1117;
+}
+
+#ground_truth {
+  height: 60%;
+  background: #0a0e12;
+}
+
+#master_score {
+  color: #00FFFF;
+  text-style: bold;
+  padding: 0 1;
+}
+
+#contradictions {
+  color: #ffd166;
+  padding: 0 1;
+}
+
+#evidence_list {
+  margin: 1 0;
+  height: auto;
+  max-height: 12;
+}
+
+/* Progress Screen */
+#progress_status {
+  margin: 1 4;
+  color: #00FFFF;
+  text-style: bold;
+}
+
+#progress_bar_label {
+  margin: 0 4;
+  color: #39FF14;
+}
+
+/* Report Summary Panel */
+#report_summary {
+  border: double #7bc8a4;
+  background: #0d1117;
+  color: #f4e7c5;
+  padding: 1 2;
+  margin: 0 1;
+  height: auto;
+  max-height: 20;
+}
+
+#report_header {
+  color: #00FFFF;
+  text-style: bold;
+  padding: 0 0 1 0;
+}
+
+#worker_results {
+  color: #d8c289;
+  padding: 0 1;
+}
+
+/* ListView Styling */
+ListView {
+  background: transparent;
+}
+
+ListView > ListItem {
+  padding: 0 1;
+  color: #f4e7c5;
+}
+
+ListView > ListItem:hover {
+  background: #1a2228;
+}
+
+ListView > ListItem.-active {
+  background: #1a2833;
+  color: #00FFFF;
+}
+
+/* Footer */
+Footer {
+  background: #0a0e12;
+  color: #7bc8a4;
+}
+
+/* Recommendation Banner */
+#recommendation {
+  width: 100%;
+  padding: 1 2;
+  margin: 0 0 1 0;
+  text-style: bold;
+  content-align: center middle;
+  min-height: 3;
+}
+
+#recommendation.bullish {
+  background: #0a2e0a;
+  color: #39FF14;
+  border: heavy #39FF14;
+}
+
+#recommendation.bearish {
+  background: #2e0a0a;
+  color: #FF003C;
+  border: heavy #FF003C;
+}
+
+#recommendation.neutral {
+  background: #2e2a0a;
+  color: #ffd166;
+  border: heavy #ffd166;
+}
+
+/* Contradiction Flags Panel */
+#contradictions_panel {
+  height: auto;
+  max-height: 6;
+  padding: 0 1;
+  margin: 0 0 1 0;
+}
+
+.contradiction-flagged {
+  color: #FF003C;
+  text-style: bold;
+}
+
+.contradiction-clean {
+  color: #555555;
+}
+
+/* Worker Cards */
+#worker_list {
+  height: auto;
+  max-height: 16;
+  margin: 0 0 1 0;
+  background: transparent;
+}
+
+#worker_list > ListItem {
+  padding: 1 2;
+  margin: 0 0 1 0;
+  border: round #333333;
+  height: auto;
+}
+
+#worker_list > ListItem:hover {
+  border: round #00FFFF;
+  background: #0d1117;
+}
+
+#worker_list > ListItem.-active {
+  border: round #39FF14;
+  background: #0d1117;
+}
+
+.worker-name {
+  color: #00FFFF;
+  text-style: bold;
+}
+
+.worker-score-positive {
+  color: #39FF14;
+}
+
+.worker-score-negative {
+  color: #FF003C;
+}
+
+.worker-score-neutral {
+  color: #ffd166;
+}
+
+.worker-thesis {
+  color: #d8c289;
+  text-style: italic;
+}
+
+.worker-quote {
+  color: #7bc8a4;
+}
+
+/* Source Document Panel Header */
+#source_header {
+  color: #00FFFF;
+  text-style: bold;
+  padding: 0 1;
+  margin: 0 0 1 0;
+}
+
+/* New Analysis Button row */
+#action_bar {
+  height: 3;
+  dock: bottom;
+  background: #0a0e12;
+  padding: 0 1;
+}
+
+#new_analysis_btn {
+  margin: 0 1;
+  background: #7bc8a4;
+  color: #101418;
+  text-style: bold;
+}
+
+/* Layout adjustments for AuditScreen */
+#audit_main {
+  height: 1fr;
+}
+
+#ledger {
+  width: 22%;
+  max-width: 36;
+  background: #0a0e12;
+}
+
+#right_panel {
+  width: 1fr;
+}
+
+#synthesis {
+  height: 50%;
+  background: #0d1117;
+}
+
+#ground_truth {
+  height: 50%;
+  background: #0a0e12;
+}

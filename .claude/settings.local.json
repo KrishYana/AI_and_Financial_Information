@@ -1,9 +1,18 @@
 {
+  "model": "claude-opus-4-6",
   "permissions": {
     "allow": [
       "Bash(.venv/Scripts/python:*)",
       "Bash(.venv/Scripts/pip install:*)",
-      "Bash(.venv/Scripts/pytest:*)"
+      "Bash(.venv/Scripts/pytest:*)",
+      "Bash(sudo npm:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm config get prefix)",
+      "Read(//home/kyanaman/**)",
+      "Bash(npm config:*)",
+      "Bash(PATH=~/.npm-global/bin:$PATH npm install:*)",
+      "Bash(export:*)"
     ]
   }
 }
