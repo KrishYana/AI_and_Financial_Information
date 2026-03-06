@@ -1,0 +1,78 @@
+Screen {
+    background: #050510;
+}
+
+DirectoryTree, VerticalScroll, RichLog {
+    border: double #00FFFF;
+    padding: 1;
+}
+
+DirectoryTree:focus, VerticalScroll:focus, RichLog:focus {
+    border: double #39FF14;
+}
+
+.flagged {
+    border: double #FF003C;
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% { border: double #FF003C; }
+    50% { border: double #4A0000; }
+    100% { border: double #FF003C; }
+}
+
+RichLog {
+    color: #39FF14;
+}
+
+#ledger {
+    width: 1fr;
+    min-width: 30;
+}
+
+Horizontal {
+    height: 1fr;
+}
+
+Vertical {
+    width: 3fr;
+}
+
+#synthesis {
+    height: 2fr;
+}
+
+#ground_truth {
+    height: 3fr;
+}
+
+#master_score {
+    color: #00FFFF;
+    text-style: bold;
+    padding: 0 1;
+}
+
+#contradictions {
+    color: #FF003C;
+    padding: 0 1;
+}
+
+ListView {
+    height: auto;
+    max-height: 20;
+}
+
+ListItem {
+    color: #39FF14;
+    padding: 0 1;
+}
+
+ListItem:hover {
+    background: #1a1a3a;
+}
+
+Header {
+    background: #0a0a2a;
+    color: #00FFFF;
+}

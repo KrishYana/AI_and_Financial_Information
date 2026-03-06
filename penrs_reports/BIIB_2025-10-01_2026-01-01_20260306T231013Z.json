@@ -1,0 +1,303 @@
+{
+  "ticker": "BIIB",
+  "date_from": "2025-10-01",
+  "date_to": "2026-01-01",
+  "generated_at": "2026-03-06T23:10:13.384022+00:00",
+  "worker_results": [
+    {
+      "status": "available",
+      "worker": {
+        "name": "Earnings Analyst",
+        "weight": 1.0,
+        "signal_density": 0.8
+      },
+      "ticker": "BIIB",
+      "date_from": "2025-10-01",
+      "date_to": "2026-01-01",
+      "document_type": "earnings_call",
+      "rubric": {
+        "rubric_id": "earnings",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "No earnings-related information available for BIIB analysis due to API rate limiting",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+            "reasoning": "The document contains only an API rate limit message from Alpha Vantage with no actual earnings data, financial metrics, or company-specific information for BIIB that would allow for earnings analysis"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Sentiment Analyst",
+        "weight": 0.7,
+        "signal_density": 0.6
+      },
+      "ticker": "BIIB",
+      "date_from": "2025-10-01",
+      "date_to": "2026-01-01",
+      "document_type": "news_sentiment",
+      "rubric": {
+        "rubric_id": "sentiment",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "No sentiment data available for BIIB in the analyzed document excerpt, as none of the 50 news items mention or reference Biogen Inc (BIIB) ticker symbol.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+            "reasoning": "Example of ticker sentiment data structure showing how BIIB would appear if present, but BIIB is not found in any of the ticker_sentiment arrays throughout the document"
+          },
+          {
+            "verbatim_quote": "\"items\": \"50\"",
+            "reasoning": "Confirms that 50 news items were analyzed in this feed, providing comprehensive coverage of market sentiment data"
+          },
+          {
+            "verbatim_quote": "\"relevance_score_definition\": \"0 < x <= 1, with a higher score indicating higher relevance.\"",
+            "reasoning": "Documents the methodology used for relevance scoring, confirming the systematic approach to sentiment analysis that would have captured BIIB if present"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Price Action Analyst",
+        "weight": 0.8,
+        "signal_density": 0.7
+      },
+      "ticker": "BIIB",
+      "date_from": "2025-10-01",
+      "date_to": "2026-01-01",
+      "document_type": "price_history",
+      "rubric": {
+        "rubric_id": "price_action",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.7,
+        "thesis": "BIIB demonstrated strong bullish momentum during the specified period, with the stock advancing from $140.82 to $175.99 (+25%) through October-December 2025, supported by consistent volume expansion and breakout above key resistance levels.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "2025-10-31\": {\"1. open\": \"140.8200\", \"2. high\": \"160.2000\", \"3. low\": \"138.0000\", \"4. close\": \"154.2700\", \"5. volume\": \"40402521\"}",
+            "reasoning": "October showed strong bullish action with the stock breaking above $160 resistance level and closing near monthly highs, accompanied by elevated volume of over 40 million shares indicating institutional participation."
+          },
+          {
+            "verbatim_quote": "2025-11-28\": {\"1. open\": \"153.6000\", \"2. high\": \"185.1700\", \"3. low\": \"148.5125\", \"4. close\": \"182.0900\", \"5. volume\": \"38479064\"}",
+            "reasoning": "November delivered exceptional performance with a surge to $185.17 high and close at $182.09, representing significant momentum continuation with strong volume support."
+          },
+          {
+            "verbatim_quote": "2025-12-31\": {\"1. open\": \"180.1500\", \"2. high\": \"183.1452\", \"3. low\": \"168.5600\", \"4. close\": \"175.9900\", \"5. volume\": \"49726683\"}",
+            "reasoning": "December showed consolidation near recent highs with massive volume of nearly 50 million shares, indicating sustained institutional interest despite some profit-taking pressure from $183 resistance."
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Biomedical Analyst",
+        "weight": 0.6,
+        "signal_density": 0.5
+      },
+      "ticker": "BIIB",
+      "date_from": "2025-10-01",
+      "date_to": "2026-01-01",
+      "document_type": "biomedical_evidence",
+      "rubric": {
+        "rubric_id": "biomedical",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": -0.3,
+        "thesis": "Limited available data suggests neutral to slightly negative outlook for BIIB, with regulatory database showing no relevant matches while academic research maintains moderate interest in BIIB-related topics.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "\"count\": \"74\"",
+            "reasoning": "PubMed shows 74 research publications related to BIIB, suggesting ongoing academic and clinical research interest, which provides some foundation for continued scientific activity around the company's focus areas."
+          },
+          {
+            "verbatim_quote": "\"error\": \"HTTP 404\"",
+            "reasoning": "The 404 error from OpenFDA suggests either system issues or genuine absence of relevant regulatory data, creating uncertainty about recent drug development pipeline progress or regulatory milestones."
+          }
+        ]
+      }
+    }
+  ],
+  "arbiter": {
+    "status": "available",
+    "arbiter_role": "Lead Portfolio Manager",
+    "system_prompt": "You are the Lead Portfolio Manager reviewing all worker outputs for consistency.\nYou must flag mandatory contradictions when present:\n- Lipstick on a Pig\n- Bailing Out\n- Dilute and Delay\nReturn strictly valid JSON.",
+    "worker_scores": [
+      {
+        "name": "Earnings Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 1.0,
+        "star_rating": 4,
+        "effective_weight": 0.8,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Sentiment Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 0.7,
+        "star_rating": 3,
+        "effective_weight": 0.42,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Price Action Analyst",
+        "raw_score": 0.7,
+        "normalized_score": 0.7,
+        "weight": 0.8,
+        "star_rating": 4,
+        "effective_weight": 0.64,
+        "weighted_score": 0.448
+      },
+      {
+        "name": "Biomedical Analyst",
+        "raw_score": -0.3,
+        "normalized_score": -0.3,
+        "weight": 0.6,
+        "star_rating": 3,
+        "effective_weight": 0.36,
+        "weighted_score": -0.108
+      }
+    ],
+    "weighted_score": 0.1531531532,
+    "contradictions": [
+      {
+        "name": "Lipstick on a Pig",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Bailing Out",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Dilute and Delay",
+        "severity": "Medium",
+        "flagged": false,
+        "evidence": null
+      }
+    ]
+  },
+  "master": {
+    "status": "available",
+    "model": "programmatic_master_v1",
+    "ticker": "BIIB",
+    "date_range": {
+      "from": "2025-10-01",
+      "to": "2026-01-01"
+    },
+    "final_score": 0.1531531532,
+    "available_worker_count": 4,
+    "total_worker_count": 4,
+    "evidence": [
+      {
+        "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+        "reasoning": "The document contains only an API rate limit message from Alpha Vantage with no actual earnings data, financial metrics, or company-specific information for BIIB that would allow for earnings analysis",
+        "cache_key": "3fe7641aeab7f5a9e82905fb7feb2c25a4f6e4eb9810d7147dcbb5a5765fefda"
+      },
+      {
+        "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+        "reasoning": "Example of ticker sentiment data structure showing how BIIB would appear if present, but BIIB is not found in any of the ticker_sentiment arrays throughout the document",
+        "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+      },
+      {
+        "verbatim_quote": "\"items\": \"50\"",
+        "reasoning": "Confirms that 50 news items were analyzed in this feed, providing comprehensive coverage of market sentiment data",
+        "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+      },
+      {
+        "verbatim_quote": "\"relevance_score_definition\": \"0 < x <= 1, with a higher score indicating higher relevance.\"",
+        "reasoning": "Documents the methodology used for relevance scoring, confirming the systematic approach to sentiment analysis that would have captured BIIB if present",
+        "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+      },
+      {
+        "verbatim_quote": "2025-10-31\": {\"1. open\": \"140.8200\", \"2. high\": \"160.2000\", \"3. low\": \"138.0000\", \"4. close\": \"154.2700\", \"5. volume\": \"40402521\"}",
+        "reasoning": "October showed strong bullish action with the stock breaking above $160 resistance level and closing near monthly highs, accompanied by elevated volume of over 40 million shares indicating institutional participation.",
+        "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+      },
+      {
+        "verbatim_quote": "2025-11-28\": {\"1. open\": \"153.6000\", \"2. high\": \"185.1700\", \"3. low\": \"148.5125\", \"4. close\": \"182.0900\", \"5. volume\": \"38479064\"}",
+        "reasoning": "November delivered exceptional performance with a surge to $185.17 high and close at $182.09, representing significant momentum continuation with strong volume support.",
+        "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+      },
+      {
+        "verbatim_quote": "2025-12-31\": {\"1. open\": \"180.1500\", \"2. high\": \"183.1452\", \"3. low\": \"168.5600\", \"4. close\": \"175.9900\", \"5. volume\": \"49726683\"}",
+        "reasoning": "December showed consolidation near recent highs with massive volume of nearly 50 million shares, indicating sustained institutional interest despite some profit-taking pressure from $183 resistance.",
+        "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+      },
+      {
+        "verbatim_quote": "\"count\": \"74\"",
+        "reasoning": "PubMed shows 74 research publications related to BIIB, suggesting ongoing academic and clinical research interest, which provides some foundation for continued scientific activity around the company's focus areas.",
+        "cache_key": "3ea13e8ac37b3fce71ead7d2986d102600476f885f84cd67599f4aeeeb71462d"
+      },
+      {
+        "verbatim_quote": "\"error\": \"HTTP 404\"",
+        "reasoning": "The 404 error from OpenFDA suggests either system issues or genuine absence of relevant regulatory data, creating uncertainty about recent drug development pipeline progress or regulatory milestones.",
+        "cache_key": "3ea13e8ac37b3fce71ead7d2986d102600476f885f84cd67599f4aeeeb71462d"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+      "reasoning": "The document contains only an API rate limit message from Alpha Vantage with no actual earnings data, financial metrics, or company-specific information for BIIB that would allow for earnings analysis",
+      "cache_key": "3fe7641aeab7f5a9e82905fb7feb2c25a4f6e4eb9810d7147dcbb5a5765fefda"
+    },
+    {
+      "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+      "reasoning": "Example of ticker sentiment data structure showing how BIIB would appear if present, but BIIB is not found in any of the ticker_sentiment arrays throughout the document",
+      "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+    },
+    {
+      "verbatim_quote": "\"items\": \"50\"",
+      "reasoning": "Confirms that 50 news items were analyzed in this feed, providing comprehensive coverage of market sentiment data",
+      "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+    },
+    {
+      "verbatim_quote": "\"relevance_score_definition\": \"0 < x <= 1, with a higher score indicating higher relevance.\"",
+      "reasoning": "Documents the methodology used for relevance scoring, confirming the systematic approach to sentiment analysis that would have captured BIIB if present",
+      "cache_key": "35054e221d7ad8e08907ca53c256c980d0349d9e38d022ec56e7b3dc59eea69a"
+    },
+    {
+      "verbatim_quote": "2025-10-31\": {\"1. open\": \"140.8200\", \"2. high\": \"160.2000\", \"3. low\": \"138.0000\", \"4. close\": \"154.2700\", \"5. volume\": \"40402521\"}",
+      "reasoning": "October showed strong bullish action with the stock breaking above $160 resistance level and closing near monthly highs, accompanied by elevated volume of over 40 million shares indicating institutional participation.",
+      "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+    },
+    {
+      "verbatim_quote": "2025-11-28\": {\"1. open\": \"153.6000\", \"2. high\": \"185.1700\", \"3. low\": \"148.5125\", \"4. close\": \"182.0900\", \"5. volume\": \"38479064\"}",
+      "reasoning": "November delivered exceptional performance with a surge to $185.17 high and close at $182.09, representing significant momentum continuation with strong volume support.",
+      "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+    },
+    {
+      "verbatim_quote": "2025-12-31\": {\"1. open\": \"180.1500\", \"2. high\": \"183.1452\", \"3. low\": \"168.5600\", \"4. close\": \"175.9900\", \"5. volume\": \"49726683\"}",
+      "reasoning": "December showed consolidation near recent highs with massive volume of nearly 50 million shares, indicating sustained institutional interest despite some profit-taking pressure from $183 resistance.",
+      "cache_key": "3aa90b157372b338ddb712ff8869e3aa8a264cb0ea90be26df006bc63f9782e2"
+    },
+    {
+      "verbatim_quote": "\"count\": \"74\"",
+      "reasoning": "PubMed shows 74 research publications related to BIIB, suggesting ongoing academic and clinical research interest, which provides some foundation for continued scientific activity around the company's focus areas.",
+      "cache_key": "3ea13e8ac37b3fce71ead7d2986d102600476f885f84cd67599f4aeeeb71462d"
+    },
+    {
+      "verbatim_quote": "\"error\": \"HTTP 404\"",
+      "reasoning": "The 404 error from OpenFDA suggests either system issues or genuine absence of relevant regulatory data, creating uncertainty about recent drug development pipeline progress or regulatory milestones.",
+      "cache_key": "3ea13e8ac37b3fce71ead7d2986d102600476f885f84cd67599f4aeeeb71462d"
+    }
+  ],
+  "report_path": "D:\\oneDrive\\Booth\\Y2Q2\\ai and financial infomation wed\\finalCode\\penrs_reports\\BIIB_2025-10-01_2026-01-01_20260306T231013Z.json"
+}

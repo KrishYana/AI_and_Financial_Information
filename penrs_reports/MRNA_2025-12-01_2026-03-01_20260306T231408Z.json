@@ -1,0 +1,317 @@
+{
+  "ticker": "MRNA",
+  "date_from": "2025-12-01",
+  "date_to": "2026-03-01",
+  "generated_at": "2026-03-06T23:14:08.688082+00:00",
+  "worker_results": [
+    {
+      "status": "available",
+      "worker": {
+        "name": "Earnings Analyst",
+        "weight": 1.0,
+        "signal_density": 0.8
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "earnings_call",
+      "rubric": {
+        "rubric_id": "earnings",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "Unable to analyze MRNA earnings due to API rate limit preventing data retrieval",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+            "reasoning": "The document contains only an API rate limit error message and no actual earnings data for MRNA, making it impossible to conduct any meaningful earnings analysis for the specified date range"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Sentiment Analyst",
+        "weight": 0.7,
+        "signal_density": 0.6
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "news_sentiment",
+      "rubric": {
+        "rubric_id": "sentiment",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "The document contains no sentiment-relevant information about MRNA stock, consisting only of a generic API rate limit notification from Alpha Vantage.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+            "reasoning": "This is purely a technical API service message with no content related to MRNA stock performance, outlook, or any market sentiment indicators."
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Price Action Analyst",
+        "weight": 0.8,
+        "signal_density": 0.7
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "price_history",
+      "rubric": {
+        "rubric_id": "price_action",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.7,
+        "thesis": "MRNA shows strong bullish price action during the specified period (2025-12-01 to 2026-03-01) with significant upward momentum, breaking key resistance levels and demonstrating sustained buying pressure across multiple timeframes.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "\"2025-12-31\": {\"1. open\": \"25.0500\", \"2. high\": \"35.9000\", \"3. low\": \"23.9200\", \"4. close\": \"29.4900\", \"5. volume\": \"223236446\"}",
+            "reasoning": "December 2025 shows strong bullish action with a 43% intramonth high range from the low, closing near the upper end of the range at $29.49, indicating strong buying pressure and momentum building into the target period."
+          },
+          {
+            "verbatim_quote": "\"2026-01-30\": {\"1. open\": \"29.8300\", \"2. high\": \"55.2000\", \"3. low\": \"29.8100\", \"4. close\": \"44.0700\", \"5. volume\": \"294842845\"}",
+            "reasoning": "January 2026 demonstrates explosive bullish momentum with an 85% surge to $55.20 high and closing at $44.07, representing a 49% gain from the open. The massive volume of 294M shares confirms institutional participation and validates the breakout."
+          },
+          {
+            "verbatim_quote": "\"2026-02-27\": {\"1. open\": \"43.4500\", \"2. high\": \"54.0200\", \"3. low\": \"36.6550\", \"4. close\": \"53.5700\", \"5. volume\": \"196421538\"}",
+            "reasoning": "February continues the strong uptrend with price consolidating above the $40 level and closing at $53.57, a 23% monthly gain. The ability to hold above previous resistance and push to new highs demonstrates sustained bullish momentum."
+          },
+          {
+            "verbatim_quote": "\"2026-03-06\": {\"1. open\": \"52.4200\", \"2. high\": \"59.5500\", \"3. low\": \"48.0900\", \"4. close\": \"52.5200\", \"5. volume\": \"68132295\"}",
+            "reasoning": "Early March data shows continued strength with new highs at $59.55, representing a further 11% advance from February's close. The price action maintains bullish structure above $50 support level, confirming the uptrend remains intact."
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Biomedical Analyst",
+        "weight": 0.6,
+        "signal_density": 0.5
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "biomedical_evidence",
+      "rubric": {
+        "rubric_id": "biomedical",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": -0.3,
+        "thesis": "The FDA adverse event data shows safety concerns for mRNA-related therapeutics, including serious reactions like anaphylaxis and cerebrovascular events, which could negatively impact investor confidence in MRNA during the specified timeframe.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+            "reasoning": "This shows mRNA-based therapeutic products are being reported in adverse event databases, indicating potential safety monitoring concerns relevant to MRNA's therapeutic pipeline."
+          },
+          {
+            "verbatim_quote": "\"reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+            "reasoning": "Serious adverse reactions like anaphylaxis associated with treatments involving mRNA technologies could raise safety concerns that may impact market confidence in mRNA-based therapeutics."
+          },
+          {
+            "verbatim_quote": "\"serious\": \"1\", \"seriousnesshospitalization\": \"1\", \"seriousnessother\": \"1\"",
+            "reasoning": "The classification of adverse events as serious with hospitalization requirements indicates significant safety issues that could influence regulatory approval processes and market perception of mRNA therapeutics."
+          },
+          {
+            "verbatim_quote": "\"count\": \"820947\"",
+            "reasoning": "The large volume of mRNA-related publications in PubMed suggests high research activity, which could indicate both opportunities and competitive pressures in the mRNA therapeutic space."
+          }
+        ]
+      }
+    }
+  ],
+  "arbiter": {
+    "status": "available",
+    "arbiter_role": "Lead Portfolio Manager",
+    "system_prompt": "You are the Lead Portfolio Manager reviewing all worker outputs for consistency.\nYou must flag mandatory contradictions when present:\n- Lipstick on a Pig\n- Bailing Out\n- Dilute and Delay\nReturn strictly valid JSON.",
+    "worker_scores": [
+      {
+        "name": "Earnings Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 1.0,
+        "star_rating": 4,
+        "effective_weight": 0.8,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Sentiment Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 0.7,
+        "star_rating": 3,
+        "effective_weight": 0.42,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Price Action Analyst",
+        "raw_score": 0.7,
+        "normalized_score": 0.7,
+        "weight": 0.8,
+        "star_rating": 4,
+        "effective_weight": 0.64,
+        "weighted_score": 0.448
+      },
+      {
+        "name": "Biomedical Analyst",
+        "raw_score": -0.3,
+        "normalized_score": -0.3,
+        "weight": 0.6,
+        "star_rating": 3,
+        "effective_weight": 0.36,
+        "weighted_score": -0.108
+      }
+    ],
+    "weighted_score": 0.1531531532,
+    "contradictions": [
+      {
+        "name": "Lipstick on a Pig",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Bailing Out",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Dilute and Delay",
+        "severity": "Medium",
+        "flagged": false,
+        "evidence": null
+      }
+    ]
+  },
+  "master": {
+    "status": "available",
+    "model": "programmatic_master_v1",
+    "ticker": "MRNA",
+    "date_range": {
+      "from": "2025-12-01",
+      "to": "2026-03-01"
+    },
+    "final_score": 0.1531531532,
+    "available_worker_count": 4,
+    "total_worker_count": 4,
+    "evidence": [
+      {
+        "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+        "reasoning": "The document contains only an API rate limit error message and no actual earnings data for MRNA, making it impossible to conduct any meaningful earnings analysis for the specified date range",
+        "cache_key": "5244000993c07c6af3e1884845b95690977971238fe6c8dfe824d3a70c2df10b"
+      },
+      {
+        "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+        "reasoning": "This is purely a technical API service message with no content related to MRNA stock performance, outlook, or any market sentiment indicators.",
+        "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+      },
+      {
+        "verbatim_quote": "\"2025-12-31\": {\"1. open\": \"25.0500\", \"2. high\": \"35.9000\", \"3. low\": \"23.9200\", \"4. close\": \"29.4900\", \"5. volume\": \"223236446\"}",
+        "reasoning": "December 2025 shows strong bullish action with a 43% intramonth high range from the low, closing near the upper end of the range at $29.49, indicating strong buying pressure and momentum building into the target period.",
+        "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+      },
+      {
+        "verbatim_quote": "\"2026-01-30\": {\"1. open\": \"29.8300\", \"2. high\": \"55.2000\", \"3. low\": \"29.8100\", \"4. close\": \"44.0700\", \"5. volume\": \"294842845\"}",
+        "reasoning": "January 2026 demonstrates explosive bullish momentum with an 85% surge to $55.20 high and closing at $44.07, representing a 49% gain from the open. The massive volume of 294M shares confirms institutional participation and validates the breakout.",
+        "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+      },
+      {
+        "verbatim_quote": "\"2026-02-27\": {\"1. open\": \"43.4500\", \"2. high\": \"54.0200\", \"3. low\": \"36.6550\", \"4. close\": \"53.5700\", \"5. volume\": \"196421538\"}",
+        "reasoning": "February continues the strong uptrend with price consolidating above the $40 level and closing at $53.57, a 23% monthly gain. The ability to hold above previous resistance and push to new highs demonstrates sustained bullish momentum.",
+        "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+      },
+      {
+        "verbatim_quote": "\"2026-03-06\": {\"1. open\": \"52.4200\", \"2. high\": \"59.5500\", \"3. low\": \"48.0900\", \"4. close\": \"52.5200\", \"5. volume\": \"68132295\"}",
+        "reasoning": "Early March data shows continued strength with new highs at $59.55, representing a further 11% advance from February's close. The price action maintains bullish structure above $50 support level, confirming the uptrend remains intact.",
+        "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+      },
+      {
+        "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+        "reasoning": "This shows mRNA-based therapeutic products are being reported in adverse event databases, indicating potential safety monitoring concerns relevant to MRNA's therapeutic pipeline.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "\"reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+        "reasoning": "Serious adverse reactions like anaphylaxis associated with treatments involving mRNA technologies could raise safety concerns that may impact market confidence in mRNA-based therapeutics.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "\"serious\": \"1\", \"seriousnesshospitalization\": \"1\", \"seriousnessother\": \"1\"",
+        "reasoning": "The classification of adverse events as serious with hospitalization requirements indicates significant safety issues that could influence regulatory approval processes and market perception of mRNA therapeutics.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "\"count\": \"820947\"",
+        "reasoning": "The large volume of mRNA-related publications in PubMed suggests high research activity, which could indicate both opportunities and competitive pressures in the mRNA therapeutic space.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+      "reasoning": "The document contains only an API rate limit error message and no actual earnings data for MRNA, making it impossible to conduct any meaningful earnings analysis for the specified date range",
+      "cache_key": "5244000993c07c6af3e1884845b95690977971238fe6c8dfe824d3a70c2df10b"
+    },
+    {
+      "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+      "reasoning": "This is purely a technical API service message with no content related to MRNA stock performance, outlook, or any market sentiment indicators.",
+      "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+    },
+    {
+      "verbatim_quote": "\"2025-12-31\": {\"1. open\": \"25.0500\", \"2. high\": \"35.9000\", \"3. low\": \"23.9200\", \"4. close\": \"29.4900\", \"5. volume\": \"223236446\"}",
+      "reasoning": "December 2025 shows strong bullish action with a 43% intramonth high range from the low, closing near the upper end of the range at $29.49, indicating strong buying pressure and momentum building into the target period.",
+      "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+    },
+    {
+      "verbatim_quote": "\"2026-01-30\": {\"1. open\": \"29.8300\", \"2. high\": \"55.2000\", \"3. low\": \"29.8100\", \"4. close\": \"44.0700\", \"5. volume\": \"294842845\"}",
+      "reasoning": "January 2026 demonstrates explosive bullish momentum with an 85% surge to $55.20 high and closing at $44.07, representing a 49% gain from the open. The massive volume of 294M shares confirms institutional participation and validates the breakout.",
+      "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+    },
+    {
+      "verbatim_quote": "\"2026-02-27\": {\"1. open\": \"43.4500\", \"2. high\": \"54.0200\", \"3. low\": \"36.6550\", \"4. close\": \"53.5700\", \"5. volume\": \"196421538\"}",
+      "reasoning": "February continues the strong uptrend with price consolidating above the $40 level and closing at $53.57, a 23% monthly gain. The ability to hold above previous resistance and push to new highs demonstrates sustained bullish momentum.",
+      "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+    },
+    {
+      "verbatim_quote": "\"2026-03-06\": {\"1. open\": \"52.4200\", \"2. high\": \"59.5500\", \"3. low\": \"48.0900\", \"4. close\": \"52.5200\", \"5. volume\": \"68132295\"}",
+      "reasoning": "Early March data shows continued strength with new highs at $59.55, representing a further 11% advance from February's close. The price action maintains bullish structure above $50 support level, confirming the uptrend remains intact.",
+      "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+    },
+    {
+      "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+      "reasoning": "This shows mRNA-based therapeutic products are being reported in adverse event databases, indicating potential safety monitoring concerns relevant to MRNA's therapeutic pipeline.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "\"reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+      "reasoning": "Serious adverse reactions like anaphylaxis associated with treatments involving mRNA technologies could raise safety concerns that may impact market confidence in mRNA-based therapeutics.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "\"serious\": \"1\", \"seriousnesshospitalization\": \"1\", \"seriousnessother\": \"1\"",
+      "reasoning": "The classification of adverse events as serious with hospitalization requirements indicates significant safety issues that could influence regulatory approval processes and market perception of mRNA therapeutics.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "\"count\": \"820947\"",
+      "reasoning": "The large volume of mRNA-related publications in PubMed suggests high research activity, which could indicate both opportunities and competitive pressures in the mRNA therapeutic space.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    }
+  ],
+  "report_path": "D:\\oneDrive\\Booth\\Y2Q2\\ai and financial infomation wed\\finalCode\\penrs_reports\\MRNA_2025-12-01_2026-03-01_20260306T231408Z.json"
+}

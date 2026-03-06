@@ -1,0 +1,289 @@
+{
+  "ticker": "MRNA",
+  "date_from": "2025-12-01",
+  "date_to": "2026-03-01",
+  "generated_at": "2026-03-06T23:05:17.861564+00:00",
+  "worker_results": [
+    {
+      "status": "available",
+      "worker": {
+        "name": "Earnings Analyst",
+        "weight": 1.0,
+        "signal_density": 0.8
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "earnings_call",
+      "rubric": {
+        "rubric_id": "earnings",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "Unable to provide earnings analysis for MRNA due to API rate limiting preventing access to financial data",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+            "reasoning": "This message indicates that the API request was rate-limited and no actual earnings or financial data for MRNA was retrieved, making it impossible to conduct any meaningful earnings analysis for the specified date range"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Sentiment Analyst",
+        "weight": 0.7,
+        "signal_density": 0.6
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "news_sentiment",
+      "rubric": {
+        "rubric_id": "sentiment",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "No sentiment information available for MRNA ticker during the specified date range of December 1, 2025 to March 1, 2026",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "This article provides a comprehensive overview of the Innovator International Developed Power Buffer ETF March (IMAR), including its current price, key statistics, and investment strategy.",
+            "reasoning": "The document contains financial news from March 6, 2026, but no articles mention or analyze MRNA (Moderna) ticker specifically during the requested timeframe"
+          },
+          {
+            "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+            "reasoning": "Example of ticker sentiment format in the document, but shows IMAR rather than MRNA - no MRNA ticker sentiment data is present in the provided excerpt"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Price Action Analyst",
+        "weight": 0.8,
+        "signal_density": 0.7
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "price_history",
+      "rubric": {
+        "rubric_id": "price_action",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": 0.0,
+        "thesis": "Unable to perform price action analysis due to API rate limit preventing data retrieval",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+            "reasoning": "The document contains only an API rate limit message with no actual price data for MRNA, making technical analysis impossible for the requested date range"
+          }
+        ]
+      }
+    },
+    {
+      "status": "available",
+      "worker": {
+        "name": "Biomedical Analyst",
+        "weight": 0.6,
+        "signal_density": 0.5
+      },
+      "ticker": "MRNA",
+      "date_from": "2025-12-01",
+      "date_to": "2026-03-01",
+      "document_type": "biomedical_evidence",
+      "rubric": {
+        "rubric_id": "biomedical",
+        "error": "rubrics.json not found"
+      },
+      "result": {
+        "score": -0.3,
+        "thesis": "The FDA adverse event data shows mixed safety signals for mRNA-related therapeutics, with some serious adverse events reported but limited specific mRNA vaccine safety concerns in the analyzed cases.",
+        "evidence_nodes": [
+          {
+            "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+            "reasoning": "This shows an experimental mRNA-based therapeutic being investigated for metastatic melanoma, indicating ongoing clinical development of mRNA technologies beyond vaccines."
+          },
+          {
+            "verbatim_quote": "reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+            "reasoning": "This represents a serious adverse event (anaphylactic reaction) reported in the safety database, though the specific causative agent among multiple drugs administered is not clearly identified."
+          },
+          {
+            "verbatim_quote": "serious\": \"1\", \"seriousnesshospitalization\": \"1\"",
+            "reasoning": "Multiple cases show serious adverse events requiring hospitalization, indicating significant safety concerns in the reported cases."
+          },
+          {
+            "verbatim_quote": "count\": \"820947\"",
+            "reasoning": "The large number of mRNA-related publications (820,947) in PubMed suggests extensive research activity in the field, potentially including safety and efficacy studies."
+          }
+        ]
+      }
+    }
+  ],
+  "arbiter": {
+    "status": "available",
+    "arbiter_role": "Lead Portfolio Manager",
+    "system_prompt": "You are the Lead Portfolio Manager reviewing all worker outputs for consistency.\nYou must flag mandatory contradictions when present:\n- Lipstick on a Pig\n- Bailing Out\n- Dilute and Delay\nReturn strictly valid JSON.",
+    "worker_scores": [
+      {
+        "name": "Earnings Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 1.0,
+        "star_rating": 4,
+        "effective_weight": 0.8,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Sentiment Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 0.7,
+        "star_rating": 3,
+        "effective_weight": 0.42,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Price Action Analyst",
+        "raw_score": 0.0,
+        "normalized_score": 0.0,
+        "weight": 0.8,
+        "star_rating": 4,
+        "effective_weight": 0.64,
+        "weighted_score": 0.0
+      },
+      {
+        "name": "Biomedical Analyst",
+        "raw_score": -0.3,
+        "normalized_score": -0.3,
+        "weight": 0.6,
+        "star_rating": 3,
+        "effective_weight": 0.36,
+        "weighted_score": -0.108
+      }
+    ],
+    "weighted_score": -0.0486486486,
+    "contradictions": [
+      {
+        "name": "Lipstick on a Pig",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Bailing Out",
+        "severity": "High",
+        "flagged": false,
+        "evidence": null
+      },
+      {
+        "name": "Dilute and Delay",
+        "severity": "Medium",
+        "flagged": false,
+        "evidence": null
+      }
+    ]
+  },
+  "master": {
+    "status": "available",
+    "model": "programmatic_master_v1",
+    "ticker": "MRNA",
+    "date_range": {
+      "from": "2025-12-01",
+      "to": "2026-03-01"
+    },
+    "final_score": -0.0486486486,
+    "available_worker_count": 4,
+    "total_worker_count": 4,
+    "evidence": [
+      {
+        "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+        "reasoning": "This message indicates that the API request was rate-limited and no actual earnings or financial data for MRNA was retrieved, making it impossible to conduct any meaningful earnings analysis for the specified date range",
+        "cache_key": "5244000993c07c6af3e1884845b95690977971238fe6c8dfe824d3a70c2df10b"
+      },
+      {
+        "verbatim_quote": "This article provides a comprehensive overview of the Innovator International Developed Power Buffer ETF March (IMAR), including its current price, key statistics, and investment strategy.",
+        "reasoning": "The document contains financial news from March 6, 2026, but no articles mention or analyze MRNA (Moderna) ticker specifically during the requested timeframe",
+        "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+      },
+      {
+        "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+        "reasoning": "Example of ticker sentiment format in the document, but shows IMAR rather than MRNA - no MRNA ticker sentiment data is present in the provided excerpt",
+        "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+      },
+      {
+        "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+        "reasoning": "The document contains only an API rate limit message with no actual price data for MRNA, making technical analysis impossible for the requested date range",
+        "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+      },
+      {
+        "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+        "reasoning": "This shows an experimental mRNA-based therapeutic being investigated for metastatic melanoma, indicating ongoing clinical development of mRNA technologies beyond vaccines.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+        "reasoning": "This represents a serious adverse event (anaphylactic reaction) reported in the safety database, though the specific causative agent among multiple drugs administered is not clearly identified.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "serious\": \"1\", \"seriousnesshospitalization\": \"1\"",
+        "reasoning": "Multiple cases show serious adverse events requiring hospitalization, indicating significant safety concerns in the reported cases.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      },
+      {
+        "verbatim_quote": "count\": \"820947\"",
+        "reasoning": "The large number of mRNA-related publications (820,947) in PubMed suggests extensive research activity in the field, potentially including safety and efficacy studies.",
+        "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+      "reasoning": "This message indicates that the API request was rate-limited and no actual earnings or financial data for MRNA was retrieved, making it impossible to conduct any meaningful earnings analysis for the specified date range",
+      "cache_key": "5244000993c07c6af3e1884845b95690977971238fe6c8dfe824d3a70c2df10b"
+    },
+    {
+      "verbatim_quote": "This article provides a comprehensive overview of the Innovator International Developed Power Buffer ETF March (IMAR), including its current price, key statistics, and investment strategy.",
+      "reasoning": "The document contains financial news from March 6, 2026, but no articles mention or analyze MRNA (Moderna) ticker specifically during the requested timeframe",
+      "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+    },
+    {
+      "verbatim_quote": "\"ticker_sentiment\": [{\"relevance_score\": \"1.000000\", \"ticker\": \"IMAR\", \"ticker_sentiment_label\": \"Neutral\", \"ticker_sentiment_score\": \"0.105480\"}]",
+      "reasoning": "Example of ticker sentiment format in the document, but shows IMAR rather than MRNA - no MRNA ticker sentiment data is present in the provided excerpt",
+      "cache_key": "3f4cacfdb4cc9f825b94c68c143a164d051f2a178837612aea8292133ed730bc"
+    },
+    {
+      "verbatim_quote": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to lift the free key rate limit (25 requests per day), raise the per-second burst limit, and instantly unlock all premium endpoints",
+      "reasoning": "The document contains only an API rate limit message with no actual price data for MRNA, making technical analysis impossible for the requested date range",
+      "cache_key": "0f2bfcfced01e3266de5f33b96847abc760a71786303e6b7f4daf77a7eca172e"
+    },
+    {
+      "verbatim_quote": "MRNA ELECTROPORATED AUTOLOGOUS DENDRITIC CELLS",
+      "reasoning": "This shows an experimental mRNA-based therapeutic being investigated for metastatic melanoma, indicating ongoing clinical development of mRNA technologies beyond vaccines.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "reactionmeddrapt\": \"Anaphylactic reaction\", \"reactionmeddraversionpt\": \"23.1\", \"reactionoutcome\": \"6\"",
+      "reasoning": "This represents a serious adverse event (anaphylactic reaction) reported in the safety database, though the specific causative agent among multiple drugs administered is not clearly identified.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "serious\": \"1\", \"seriousnesshospitalization\": \"1\"",
+      "reasoning": "Multiple cases show serious adverse events requiring hospitalization, indicating significant safety concerns in the reported cases.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    },
+    {
+      "verbatim_quote": "count\": \"820947\"",
+      "reasoning": "The large number of mRNA-related publications (820,947) in PubMed suggests extensive research activity in the field, potentially including safety and efficacy studies.",
+      "cache_key": "1cc9aa11520f072444f0fbd2bbc48c8db930d97613851c98cc57a1789dafdafe"
+    }
+  ],
+  "report_path": "D:\\oneDrive\\Booth\\Y2Q2\\ai and financial infomation wed\\finalCode\\penrs_reports\\MRNA_2025-12-01_2026-03-01_20260306T230517Z.json"
+}
