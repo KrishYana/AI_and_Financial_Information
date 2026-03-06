@@ -1,0 +1,110 @@
+{
+  "earnings_call": {
+    "rubric_id": "earnings_call",
+    "name": "Earnings Analysis",
+    "instruction": "Analyze the quarterly earnings data for signs of financial health or deterioration. Focus on EPS trends, surprise percentages, and whether the company is beating or missing estimates consistently.",
+    "scoring_guide": {
+      "-1.0": "Consistently missing estimates with worsening EPS trajectory",
+      "-0.5": "Mixed results trending negative, recent misses",
+      "0.0": "Insufficient data or genuinely mixed signals",
+      "0.5": "Beating estimates with stable or improving EPS",
+      "1.0": "Consistently beating estimates with strong upward EPS trajectory"
+    }
+  },
+  "form_4": {
+    "rubric_id": "form_4",
+    "name": "Insider Transaction Analysis",
+    "instruction": "Analyze insider trading activity (Form 4 filings). Heavy insider selling, especially by C-suite executives, is bearish. Insider buying, especially clustered purchases, is bullish. Consider transaction size relative to holdings.",
+    "scoring_guide": {
+      "-1.0": "Massive insider selling across multiple executives",
+      "-0.5": "Net insider selling, some large dispositions",
+      "0.0": "Balanced or routine transactions (e.g., planned sales)",
+      "0.5": "Net insider buying, moderate confidence signals",
+      "1.0": "Heavy insider buying by multiple executives"
+    }
+  },
+  "news_sentiment": {
+    "rubric_id": "news_sentiment",
+    "name": "News Sentiment Analysis",
+    "instruction": "Analyze recent news articles and their sentiment scores for the ticker. Look for consensus direction, notable catalysts (FDA decisions, partnerships, trial results), and whether sentiment is shifting.",
+    "scoring_guide": {
+      "-1.0": "Overwhelmingly negative coverage with major negative catalysts",
+      "-0.5": "Mostly negative sentiment, concerning headlines",
+      "0.0": "Mixed or neutral coverage",
+      "0.5": "Mostly positive sentiment, favorable catalysts",
+      "1.0": "Overwhelmingly positive with major positive catalysts"
+    }
+  },
+  "price_history": {
+    "rubric_id": "price_history",
+    "name": "Price Action Analysis",
+    "instruction": "Analyze recent price history for technical signals. Consider trend direction, volatility, volume patterns, and whether the stock is near 30-day highs or lows. High volume on down days is bearish; high volume on up days is bullish.",
+    "scoring_guide": {
+      "-1.0": "Strong downtrend with increasing volume on selloffs",
+      "-0.5": "Declining trend, elevated volatility",
+      "0.0": "Sideways consolidation or insufficient data",
+      "0.5": "Uptrend with healthy volume confirmation",
+      "1.0": "Strong uptrend with breakout volume patterns"
+    }
+  },
+  "sec_10k": {
+    "rubric_id": "sec_10k",
+    "name": "Annual Report (10-K) Analysis",
+    "instruction": "Analyze the most recent 10-K annual filing. Focus on risk factors, revenue trends, R&D spending relative to revenue, cash burn rate, and management discussion of business outlook. For biotech, pay special attention to pipeline updates and cash runway.",
+    "scoring_guide": {
+      "-1.0": "Critical risks, cash runway concerns, pipeline failures",
+      "-0.5": "Elevated risks, declining metrics, cautious outlook",
+      "0.0": "Stable but unremarkable, balanced risks and opportunities",
+      "0.5": "Positive trends, strong cash position, advancing pipeline",
+      "1.0": "Exceptional financial health, multiple near-term catalysts"
+    }
+  },
+  "sec_10q": {
+    "rubric_id": "sec_10q",
+    "name": "Quarterly Report (10-Q) Analysis",
+    "instruction": "Analyze the most recent 10-Q quarterly filing. Compare to prior quarters for trajectory. Focus on revenue, operating expenses, cash position changes, and any material updates to risk factors or legal proceedings.",
+    "scoring_guide": {
+      "-1.0": "Sharply deteriorating quarterly metrics, new material risks",
+      "-0.5": "Declining metrics quarter-over-quarter",
+      "0.0": "Stable metrics, no significant changes",
+      "0.5": "Improving metrics, positive trajectory",
+      "1.0": "Strong sequential improvement across key metrics"
+    }
+  },
+  "sec_8k": {
+    "rubric_id": "sec_8k",
+    "name": "Current Report (8-K) Analysis",
+    "instruction": "Analyze the most recent 8-K filing for material events. 8-Ks report significant corporate events: executive changes, acquisitions, material agreements, financial restatements, delisting notices. Assess whether the event is positive or negative for shareholders.",
+    "scoring_guide": {
+      "-1.0": "Major negative event (restatement, delisting risk, key exec departure)",
+      "-0.5": "Moderately negative event or concerning disclosure",
+      "0.0": "Routine filing or neutral event",
+      "0.5": "Positive event (new partnership, favorable agreement)",
+      "1.0": "Major positive catalyst (acquisition, breakthrough agreement)"
+    }
+  },
+  "clinical_trials": {
+    "rubric_id": "clinical_trials",
+    "name": "Clinical Trials Analysis",
+    "instruction": "Analyze active clinical trials for the company. Consider trial phases (later phases are more significant), enrollment status, number of active trials, and therapeutic areas. A robust pipeline with advancing trials is bullish; terminated or suspended trials are bearish.",
+    "scoring_guide": {
+      "-1.0": "Multiple trial failures or suspensions, thin pipeline",
+      "-0.5": "Some trial setbacks, slow enrollment, early-stage only",
+      "0.0": "Mixed pipeline, typical for stage of company",
+      "0.5": "Active trials advancing, good enrollment, diverse pipeline",
+      "1.0": "Late-stage trials with positive interim data, robust pipeline"
+    }
+  },
+  "biomedical_evidence": {
+    "rubric_id": "biomedical_evidence",
+    "name": "Biomedical Evidence Analysis",
+    "instruction": "Analyze adverse event reports (openFDA) and recent publications (PubMed). High adverse event counts relative to drug usage may signal safety concerns. Recent publications showing efficacy or safety data inform the scientific evidence base.",
+    "scoring_guide": {
+      "-1.0": "Serious safety signals, negative publication findings",
+      "-0.5": "Elevated adverse events, mixed publication evidence",
+      "0.0": "Typical adverse event profile, neutral publications",
+      "0.5": "Low adverse events, positive efficacy publications",
+      "1.0": "Excellent safety profile, strong positive evidence base"
+    }
+  }
+}
