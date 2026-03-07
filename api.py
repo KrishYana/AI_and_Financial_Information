@@ -14,56 +14,20 @@ Endpoints:
 from __future__ import annotations
 
 import json
-import sys
+import os
 from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-load_dotenv(override=True)
-
-# ---------------------------------------------------------------------------
-# Load notebook code (same approach as run_pipeline.py)
-# ---------------------------------------------------------------------------
-
-def _exec_notebook(nb_path: str) -> dict:
-    raw = json.loads(Path(nb_path).read_text(encoding="utf-8"))
-    ns: dict = {}
-    for cell in raw.get("cells", []):
-        if cell.get("cell_type") == "code":
-            source = "".join(cell.get("source", []))
-            try:
-                exec(compile(source, nb_path, "exec"), ns)
-            except Exception as exc:
-                print(f"  [skip cell] {exc}", file=sys.stderr)
-    return ns
-
-
-print("Loading worker_nodes.ipynb …")
-_worker_ns = _exec_notebook("worker_nodes.ipynb")
-PENRSWorker = _worker_ns["PENRSWorker"]
-DocumentType = _worker_ns["DocumentType"]
-
-print("Loading orchestrator.ipynb …")
-_orch_ns = _exec_notebook("orchestrator.ipynb")
-run_penrs = _orch_ns["run_penrs"]
-
-_PENRSReport = _orch_ns.get("PENRSReport")
-if _PENRSReport is not None:
-    _PENRSReport.model_rebuild(_types_namespace={"Any": Any})
-
-# ---------------------------------------------------------------------------
-# Import pipeline components from run_pipeline.py
-# ---------------------------------------------------------------------------
-
-from run_pipeline import (
-    _build_workers,
-    _real_document_fetcher,
-    _real_llm_invoker,
-)
+# Import everything from run_pipeline (it handles notebook loading)
+from run_pipeline import _build_workers, run_penrs
 
 REPORTS_DIR = Path("penrs_reports")
 
@@ -73,7 +37,6 @@ REPORTS_DIR = Path("penrs_reports")
 
 app = FastAPI(title="PENRS API", version="1.0.0")
 
-# Allow Lovable (and any frontend) to call this API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -156,6 +119,17 @@ async def list_reports():
         except (OSError, json.JSONDecodeError):
             continue
     return {"reports": reports}
+
+
+@app.get("/api/debug/env")
+async def debug_env():
+    """Temporary: check if env vars are loaded (shows first/last 4 chars only)."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    return {
+        "ANTHROPIC_API_KEY_set": bool(key),
+        "key_preview": f"{key[:8]}...{key[-4:]}" if len(key) > 12 else "(too short or empty)",
+        "key_length": len(key),
+    }
 
 
 @app.get("/api/reports/{filename}")

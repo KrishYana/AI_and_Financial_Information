@@ -127,14 +127,20 @@ async def _real_document_fetcher(
 
 import anthropic
 
-_client = anthropic.Anthropic()  # uses ANTHROPIC_API_KEY from env
+_client = None
+
+
+def _get_client() -> anthropic.Anthropic:
+    global _client
+    if _client is None:
+        _client = anthropic.Anthropic()
+    return _client
 
 
 async def _real_llm_invoker(prompt: str, *, system: str = "Respond only in valid JSON.") -> str:
     """Call Claude via the Anthropic Messages API."""
-    # Run the synchronous SDK call in a thread to keep the event loop free
     def _call():
-        response = _client.messages.create(
+        response = _get_client().messages.create(
             model="claude-sonnet-4-20250514",
             max_tokens=2048,
             system=system,
