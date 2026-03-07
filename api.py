@@ -121,6 +121,17 @@ async def list_reports():
     return {"reports": reports}
 
 
+@app.get("/api/debug/env")
+async def debug_env():
+    """Temporary: check if env vars are loaded (shows first/last 4 chars only)."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    return {
+        "ANTHROPIC_API_KEY_set": bool(key),
+        "key_preview": f"{key[:8]}...{key[-4:]}" if len(key) > 12 else "(too short or empty)",
+        "key_length": len(key),
+    }
+
+
 @app.get("/api/reports/{filename}")
 async def get_report(filename: str):
     """Fetch a specific saved report by filename."""
